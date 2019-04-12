@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
+import Grid from '@material-ui/core/Grid'
 
 export default class Timer extends Component {
   constructor(props) {
@@ -39,18 +40,20 @@ export default class Timer extends Component {
     let data = Object.entries(this.state)
 
     return (
-      <div className="countdown">
-        {data.map(value =>
-          <div className="box" key={value[0]}>
-            <div className="number">
-              {value[1]}
+      <Grid container alignItems="center" justify="center" direction="row">
+        <div className="countdown">
+          {data.map(value =>
+            <div className="box" key={value[0]}>
+              <div className="number">
+                {value[1]}
+              </div>
+              <div className="label">
+                {value[0]}
+              </div>
             </div>
-            <div className="label">
-              {value[0]}
-            </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      </Grid>
     )
   }
 }

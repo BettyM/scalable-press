@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import moment from 'moment'
 import Grid from '@material-ui/core/Grid'
 import ExpansionPanel from '@material-ui/core/ExpansionPanel'
 import ExpansionPanelSummary from
@@ -8,12 +9,14 @@ import ExpansionPanelDetails from
 import Typography from '@material-ui/core/Typography'
 import Timer from '../Timer'
 import CoinFlip from '../CoinFlip'
+import Calendar from '../Calendar'
 
 export default class Dashboard extends Component {
   constructor() {
     super()
     this.state = {
       expanded: 'panel1',
+      finalDate: moment().add(1, 'day'),
     }
   }
 
@@ -23,8 +26,12 @@ export default class Dashboard extends Component {
     })
   }
 
+  onDateChange = e => {
+    this.setState({ finalDate: e })
+  }
+
   render() {
-    const { expanded } = this.state
+    const { expanded, finalDate } = this.state
 
     return (
       <div className="root">
@@ -43,7 +50,11 @@ export default class Dashboard extends Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Grid item xs={12}>
-              <Timer date={this.props.finalDate} />
+              <Calendar
+                onDateChange={this.onDateChange}
+                selectedDate={finalDate}
+              />
+              <Timer date={finalDate} />
             </Grid>
           </ExpansionPanelDetails>
         </ExpansionPanel>
