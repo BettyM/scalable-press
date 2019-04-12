@@ -49,3 +49,19 @@ code {
   color: #B40404 !important;
   text-align: center !important;
 }
+
+.root {
+  padding: 10%;
+}
+
+.title-text {
+  font-size: 24px !important;
+}
+
+.subtitle-text {
+  font-size: 18px !important;
+}
+
+.summary {
+  background-color: #BDBDBD !important;
+}
