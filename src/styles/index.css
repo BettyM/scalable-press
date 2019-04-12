@@ -12,3 +12,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.countdown {
+  display: flex;
+  padding: 20%;
+}
+
+.box {
+  border: 1px solid #A4A4A4;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 20px 10px;
+  width: 100px;
+}
+
+.number {
+  font-size: 28px;
+}
+
+.label {
+  color: #A4A4A4;
+  font-weight: bold;
+  text-transform: capitalize;
+}
